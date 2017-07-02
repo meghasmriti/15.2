@@ -1,0 +1,18 @@
+CREATE TABLE olympix_data (name string, age int,country string, year int, closing_date string,category string,gold int,silver int, bronze int, total int ) row format delimited fields terminated by ‘,’;
+
+
+LOAD DATA LOCAL INPATH '/home/yourcsvfile.csv' OVERWRITE INTO TABLE olympix_data;
+
+
+1)SELECT country, SUM(total) FROM   GROUP by country
+ HAVING category == "Swimming";
+
+
+2)SELECT year, SUM(total) FROM olympix_data GROUP by year HAVING country == "India";
+
+
+3)SELECT country,SUM(total) FROM olympix_data GROUP by country;
+
+
+4)SELECT country, SUM(gold) FROM olympix_data GROUP by country;
+
